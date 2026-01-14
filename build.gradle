@@ -3,6 +3,19 @@ plugins {
 	id 'maven-publish'
 }
 
+// Provide a `runClientDebug` task that runs the client and suspends the JVM
+// until a debugger attaches on port 5005.
+tasks.register('runClientDebug') {
+	group = 'application'
+	description = 'Run the Minecraft client and wait for debugger on port 5005 (suspend=y)'
+
+	doLast {
+		def runClient = tasks.named('runClient', JavaExec).get()
+		runClient.jvmArgs = (runClient.jvmArgs ?: []) + ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"]
+		runClient.exec()
+	}
+}
+
 version = project.mod_version
 group = project.maven_group
 
@@ -22,7 +35,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"modid" {
+		"projectkronos" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
@@ -30,14 +43,20 @@ loom {
 
 }
 
+fabricApi {
+	configureDataGeneration {
+		client = true
+	}
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings()
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	
 }
 

@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 
 public class OmnidroidV0Renderer extends MobEntityRenderer<OmnidroidV0Entity,OmnidroidRenderState, OmnidroidV0Model> {
 
-    private static final Identifier OMNI_V1_TEXTURE = Identifier.of(ProjectKronos.MOD_ID, "textures/entity/omnidroid_v0/cuboid.png");
+    private static final Identifier OMNI_V1_TEXTURE = Identifier.of(ProjectKronos.MOD_ID, "textures/entity/omnidroid_v0/base.png");
 
     public OmnidroidV0Renderer(Context context) {
         this(context, new OmnidroidV0Model(context.getPart(OmnidroidV0Model.LAYER_LOCATION)), 0.5f);
@@ -38,7 +38,7 @@ public class OmnidroidV0Renderer extends MobEntityRenderer<OmnidroidV0Entity,Omn
     @Override
     public void render(OmnidroidRenderState omnidroidRenderState, MatrixStack matrixStack,
             OrderedRenderCommandQueue orderedRenderCommandQueue, CameraRenderState cameraRenderState) {
-        
+
         super.render(omnidroidRenderState, matrixStack, orderedRenderCommandQueue, cameraRenderState);
         ///manage custom rendering here
     }

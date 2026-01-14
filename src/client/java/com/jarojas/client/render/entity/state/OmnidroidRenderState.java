@@ -1,4 +1,4 @@
-package com.jarojas.render.entity.state;
+package com.jarojas.client.render.entity.state;
 
 import com.jarojas.world.entity.custom.Damage;
 

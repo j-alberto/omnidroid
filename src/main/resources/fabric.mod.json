@@ -16,13 +16,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.jarojas.Projectkronos"
+			"com.jarojas.ProjectKronos"
 		],
 		"client": [
-			"com.jarojas.ProjectkronosClient"
+			"com.jarojas.client.ProjectKronosClient"
 		],
 		"fabric-datagen": [
-			"com.jarojas.ProjectkronosDataGenerator"
+			"com.jarojas.client.ProjectKronosDataGenerator"
 		]
 	},
 	"mixins": [

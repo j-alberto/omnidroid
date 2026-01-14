@@ -10,7 +10,7 @@ import com.jarojas.world.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 
-public class Projectkronos implements ModInitializer {
+public class ProjectKronos implements ModInitializer {
 	public static final String MOD_ID = "projectkronos";
 
 	// This logger is used to write text to the console and the log file.

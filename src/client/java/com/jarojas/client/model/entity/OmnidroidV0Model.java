@@ -1,6 +1,6 @@
-package com.jarojas.model.entity;
+package com.jarojas.client.model.entity;
 
-import com.jarojas.render.entity.state.OmnidroidRenderState;
+import com.jarojas.client.render.entity.state.OmnidroidRenderState;
 import com.jarojas.world.entity.ModEntities;
 
 import net.minecraft.client.model.Dilation;

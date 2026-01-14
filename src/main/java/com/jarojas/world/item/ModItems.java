@@ -1,6 +1,6 @@
 package com.jarojas.world.item;
 
-import com.jarojas.Projectkronos;
+import com.jarojas.ProjectKronos;
 import com.jarojas.world.entity.ModEntities;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -23,7 +23,7 @@ public class ModItems {
 
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(Projectkronos.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, Identifier.of(ProjectKronos.MOD_ID, name), item);
     }
 
 

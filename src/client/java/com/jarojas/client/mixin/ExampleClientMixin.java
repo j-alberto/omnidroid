@@ -1,4 +1,4 @@
-package com.jarojas.mixin.client;
+package com.jarojas.client.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;

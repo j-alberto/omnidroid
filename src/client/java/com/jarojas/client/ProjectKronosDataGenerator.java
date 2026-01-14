@@ -1,9 +1,9 @@
-package com.jarojas;
+package com.jarojas.client;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
-public class ProjectkronosDataGenerator implements DataGeneratorEntrypoint {
+public class ProjectKronosDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 

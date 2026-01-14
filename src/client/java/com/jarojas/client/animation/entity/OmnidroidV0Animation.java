@@ -1,4 +1,4 @@
-package com.jarojas.animation.entity;
+package com.jarojas.client.animation.entity;
 
 import net.minecraft.client.render.entity.animation.AnimationDefinition;
 import net.minecraft.client.render.entity.animation.AnimationHelper;

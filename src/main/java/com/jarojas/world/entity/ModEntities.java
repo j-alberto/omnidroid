@@ -1,7 +1,7 @@
 package com.jarojas.world.entity;
 
-import static com.jarojas.Projectkronos.LOGGER;
-import static com.jarojas.Projectkronos.MOD_ID;
+import static com.jarojas.ProjectKronos.LOGGER;
+import static com.jarojas.ProjectKronos.MOD_ID;
 
 import com.jarojas.world.entity.custom.OmnidroidV0Entity;
 

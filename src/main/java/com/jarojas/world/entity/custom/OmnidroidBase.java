@@ -1,11 +1,14 @@
 package com.jarojas.world.entity.custom;
 
-import com.jarojas.world.entity.ai.OmnidroidLookAtPlayerGoal;
-import com.jarojas.world.entity.ai.OmnidroidMeleeAttackGoal;
-
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.ActiveTargetGoal;
+import net.minecraft.entity.ai.goal.LookAroundGoal;
+import net.minecraft.entity.ai.goal.LookAtEntityGoal;
+import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 
 /**
@@ -16,48 +19,23 @@ public abstract class OmnidroidBase extends HostileEntity {
 
     protected OmnidroidBase(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
-        //TODO Auto-generated constructor stub
     }
 
     @Override
     protected void initGoals() {
-        goalSelector.add(0, new OmnidroidMeleeAttackGoal());
-        goalSelector.add(1, new OmnidroidLookAtPlayerGoal());
+        this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0D, true));
+        this.goalSelector.add(2, new WanderAroundFarGoal(this, 0.8D));
+        this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.add(4, new LookAroundGoal(this));
+
+        // Targeting
+        this.targetSelector.add(0, new ActiveTargetGoal<>(
+                this,
+                PlayerEntity.class,
+                true
+        ));
     }
 
-    // @Override
-    // protected void registerGoals() {
-    //     // Default goals can be added by derived classes.
-    // }
     
-
-    // /**
-    //  * Helper to add adaptive goals at runtime from variants.
-    //  */
-    // public void addAdaptiveGoal(int priority, Goal goal) {
-    //     // this.goalSelector.add(priority, goal);
-    // }
-
-    // /**
-    //  * High-level decision tick called each entity tick.
-    //  * Variants may override to implement mode switches or state transitions.
-    //  */
-    // protected void tickBrain() {
-    //     // placeholder for adaptive logic
-    // }
-
-    // @Override
-    // public void tick() {
-    //     super.tick();
-    //     tickBrain();
-    // }
-
-
-
-    // public static AttributeSupplier.Builder createAttributes() {
-	// 	return Monster.createMonsterAttributes()
-    //         .add(Attributes.ATTACK_DAMAGE, 6.0)
-    //         .add(Attributes.MOVEMENT_SPEED, 0.23F)
-    //         .add(Attributes.FOLLOW_RANGE, 48.0);
-	// }
 }

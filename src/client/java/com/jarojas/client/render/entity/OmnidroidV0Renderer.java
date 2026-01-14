@@ -17,12 +17,7 @@ public class OmnidroidV0Renderer extends MobEntityRenderer<OmnidroidV0Entity,Omn
     private static final Identifier OMNI_V1_TEXTURE = Identifier.of(ProjectKronos.MOD_ID, "textures/entity/omnidroid_v0/base.png");
 
     public OmnidroidV0Renderer(Context context) {
-        this(context, new OmnidroidV0Model(context.getPart(OmnidroidV0Model.LAYER_LOCATION)), 0.5f);
-    }
-
-    
-    public OmnidroidV0Renderer(Context context, OmnidroidV0Model entityModel, float f) {
-        super(context, entityModel, f);
+        super(context, new OmnidroidV0Model(context.getPart(OmnidroidV0Model.LAYER_LOCATION)), 0.5f);
     }
 
     @Override
@@ -33,6 +28,12 @@ public class OmnidroidV0Renderer extends MobEntityRenderer<OmnidroidV0Entity,Omn
     @Override
     public OmnidroidRenderState createRenderState() {
         return new OmnidroidRenderState();
+    }
+
+    @Override
+    public void updateRenderState(OmnidroidV0Entity omnidroidV0Entity, OmnidroidRenderState omnidroidRenderState, float f) {
+        super.updateRenderState(omnidroidV0Entity, omnidroidRenderState, f);
+        omnidroidRenderState.idleAnimationState.copyFrom(omnidroidV0Entity.idleAnimationState); //el puente oficial entidad → render
     }
 
     @Override

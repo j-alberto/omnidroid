@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import com.jarojas.world.entity.ModEntities;
 import com.jarojas.world.entity.custom.OmnidroidV0Entity;
+import com.jarojas.world.entity.custom.OmnidroidV1Entity;
 import com.jarojas.world.item.ModItems;
 
 import net.fabricmc.api.ModInitializer;
@@ -29,6 +30,7 @@ public class ProjectKronos implements ModInitializer {
 		ModItems.registerModItems();
 		ModEntities.registerModEntities();
 
-		FabricDefaultAttributeRegistry.register(ModEntities.OMNIDROID_V0, OmnidroidV0Entity.createOmnidroidV0Attributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.OMNIDROID_V0, OmnidroidV0Entity.createOmnidroidAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.OMNIDROID_V1, OmnidroidV1Entity.createOmnidroidAttributes());
 	}
 }

@@ -9,26 +9,22 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.world.World;
 
-public class OmnidroidV0Entity extends OmnidroidBase {
+public class OmnidroidV1Entity extends OmnidroidBase {
 
     public static final float SCALE = 3.0f;
 
-    // public static float SCALE() {
-    //     return (float)(Math.random()*2 + 1);
-    // }
-
     public final AnimationState idleAnimationState = new AnimationState();
 
-    public OmnidroidV0Entity(EntityType<? extends HostileEntity> entityType, World world) {
+    public OmnidroidV1Entity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public static DefaultAttributeContainer.Builder createOmnidroidAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.MAX_HEALTH, 20.0)
-                .add(EntityAttributes.ATTACK_DAMAGE, 3)
-                .add(EntityAttributes.MOVEMENT_SPEED, 0.25)
-                .add(EntityAttributes.ARMOR, 1.0)
+                .add(EntityAttributes.MAX_HEALTH, 80.0)
+                .add(EntityAttributes.ATTACK_DAMAGE, 4)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.4)
+                .add(EntityAttributes.ARMOR, 2.0)
                 .add(EntityAttributes.SCALE, SCALE)
                 .add(EntityAttributes.FOLLOW_RANGE, 8.0); //matching with LookAtEntityGoal's range
     }

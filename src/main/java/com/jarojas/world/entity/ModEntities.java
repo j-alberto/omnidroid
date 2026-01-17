@@ -15,22 +15,24 @@ import net.minecraft.util.Identifier;
 
 public class ModEntities {
 
-    public static final Identifier OMNIDROID_V0_ID =  Identifier.of(MOD_ID, "omnidroid_v0");
-    public static final Identifier OMNIDROID_V1_ID =  Identifier.of(MOD_ID, "omnidroid_v1");
-
+    public static final Identifier OMNIDROID_V0_ID =
+        Identifier.of(MOD_ID, "omnidroid_v0");    
     public static final EntityType<OmnidroidV0Entity> OMNIDROID_V0 = Registry.register(
-            Registries.ENTITY_TYPE,
-            OMNIDROID_V0_ID,
-            EntityType.Builder.create(OmnidroidV0Entity::new, SpawnGroup.MONSTER)
-                    .dimensions(2.5f , 4.50f )
-                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), OMNIDROID_V0_ID)));
-    
+        Registries.ENTITY_TYPE,
+        OMNIDROID_V0_ID,
+        EntityType.Builder.create(OmnidroidV0Entity::new, SpawnGroup.MONSTER)
+            .dimensions(2.5f , 4.0f )
+            .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), OMNIDROID_V0_ID)));
+        
+    public static final Identifier OMNIDROID_V1_ID =
+        Identifier.of(MOD_ID, "omnidroid_v1");
     public static final EntityType<OmnidroidV1Entity> OMNIDROID_V1 = Registry.register(
-            Registries.ENTITY_TYPE,
-            OMNIDROID_V1_ID,
-            EntityType.Builder.create(OmnidroidV1Entity::new, SpawnGroup.MONSTER)
-                    .dimensions(2.5f , 4.50f )
-                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), OMNIDROID_V1_ID)));
+        Registries.ENTITY_TYPE,
+        OMNIDROID_V1_ID,
+        EntityType.Builder.create(OmnidroidV1Entity::new, SpawnGroup.MONSTER)
+            .dimensions(4.5f , 5.0f )
+            .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), OMNIDROID_V1_ID)));
+
 
     public static void registerModEntities() {
         

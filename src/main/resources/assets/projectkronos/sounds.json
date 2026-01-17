@@ -1,0 +1,32 @@
+{
+  "omni_scan": {
+    "subtitle": "sound.projectkronos.omni_scan",
+    "sounds": [
+      "projectkronos:omni_scan"
+    ]
+  },
+  "omni_damage": {
+    "subtitle": "sound.projectkronos.omni_damage",
+    "sounds": [
+      "projectkronos:omni_damage"
+    ]
+  },
+  "omni_laser": {
+    "subtitle": "sound.projectkronos.omni_laser",
+    "sounds": [
+      "projectkronos:omni_laser"
+    ]
+  },
+  "omni_melee_attack1": {
+    "subtitle": "sound.projectkronos.omni_melee_attack1",
+    "sounds": [
+      "projectkronos:omni_melee_attack1"
+    ]
+  },
+    "omni_death": {
+    "subtitle": "sound.projectkronos.omni_death",
+    "sounds": [
+      "projectkronos:omni_death"
+    ]
+  }
+}

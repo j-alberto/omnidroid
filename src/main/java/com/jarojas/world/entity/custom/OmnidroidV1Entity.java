@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 
 public class OmnidroidV1Entity extends OmnidroidBase {
 
-    public static final float SCALE = 3.0f;
 
     public final AnimationState idleAnimationState = new AnimationState();
 
@@ -22,11 +21,11 @@ public class OmnidroidV1Entity extends OmnidroidBase {
     public static DefaultAttributeContainer.Builder createOmnidroidAttributes() {
         return MobEntity.createMobAttributes()
                 .add(EntityAttributes.MAX_HEALTH, 80.0)
-                .add(EntityAttributes.ATTACK_DAMAGE, 4)
+                .add(EntityAttributes.ATTACK_DAMAGE, 6)
                 .add(EntityAttributes.MOVEMENT_SPEED, 0.4)
                 .add(EntityAttributes.ARMOR, 2.0)
-                .add(EntityAttributes.SCALE, SCALE)
-                .add(EntityAttributes.FOLLOW_RANGE, 8.0); //matching with LookAtEntityGoal's range
+                .add(EntityAttributes.SCALE, 4.0)
+                .add(EntityAttributes.FOLLOW_RANGE, 32.0); //matching with LookAtEntityGoal's range
     }
 
     @Override
